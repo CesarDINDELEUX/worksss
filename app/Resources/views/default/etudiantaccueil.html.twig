@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Campus HEP</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a class="waves-effect waves-light btn">Connexion</a></li>
+                <li><a class="waves-effect waves-light btn">Inscription</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h4>Mes Projets</h4>
+
+    <br>
+
+    <div class="row">
+        <form class="col s6">
+    <table>
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Workshop</td>
+            <td><i class="small material-icons">fiber_manual_record</i></td>
+        </tr>
+        <tr>
+            <td>Voiliers</td>
+            <td><i class="small material-icons">fiber_manual_record</i></td>
+        </tr>
+        <tr>
+            <td>Réseaux</td>
+            <td><i class="small material-icons">fiber_manual_record</i></td>
+        </tr>
+        </tbody>
+    </table>
+        </form>
+    </div>
+
+{% endblock %}
