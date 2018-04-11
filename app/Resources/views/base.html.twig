@@ -2,20 +2,28 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block stylesheets %}
+            <link href="{{ asset('css/materialize.css') }}" rel="stylesheet"/>
+        {% endblock %}
 
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        {% block javascripts %}
+            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
+        {% endblock %}
 
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Campus HEP</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a class="waves-effect waves-light btn">Connexion</a></li>
+                    <li><a class="waves-effect waves-light btn">Inscription</a></li>
+                </ul>
+            </div>
+        </nav>
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+
 </html>
+<body>
+{% block body %}
+{% endblock %}
+</body>
