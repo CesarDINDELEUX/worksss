@@ -46,12 +46,13 @@ class Equipes
      */
     private $projet;
     
+  
     /**
-     * One Product has Many Features.
-     * @ORM\OneToMany(targetEntity="Jetons", mappedBy="equipe")
+     * @var int
+     *
+     * @ORM\Column(name="valeur", type="integer")
      */
-    private $jetons;
-    // ...
+    private $teemps;
     
     /**
      * Many Groups have Many Users.
@@ -61,7 +62,7 @@ class Equipes
 
     public function __construct() {
         $this->etudiants = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->jetons = new ArrayCollection();
+        
     }
 
 
@@ -147,39 +148,9 @@ class Equipes
         return $this->projet;
     }
 
-    /**
-     * Add jeton
-     *
-     * @param \AppBundle\Entity\Jetons $jeton
-     *
-     * @return Equipes
-     */
-    public function addJeton(\AppBundle\Entity\Jetons $jeton)
-    {
-        $this->jetons[] = $jeton;
+    
 
-        return $this;
-    }
-
-    /**
-     * Remove jeton
-     *
-     * @param \AppBundle\Entity\Jetons $jeton
-     */
-    public function removeJeton(\AppBundle\Entity\Jetons $jeton)
-    {
-        $this->jetons->removeElement($jeton);
-    }
-
-    /**
-     * Get jetons
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getJetons()
-    {
-        return $this->jetons;
-    }
+    
 
     /**
      * Add etudiant
@@ -213,5 +184,29 @@ class Equipes
     public function getEtudiants()
     {
         return $this->etudiants;
+    }
+
+    /**
+     * Set teemps
+     *
+     * @param integer $teemps
+     *
+     * @return Equipes
+     */
+    public function setTeemps($teemps)
+    {
+        $this->teemps = $teemps;
+
+        return $this;
+    }
+
+    /**
+     * Get teemps
+     *
+     * @return integer
+     */
+    public function getTeemps()
+    {
+        return $this->teemps;
     }
 }

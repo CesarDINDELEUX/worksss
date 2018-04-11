@@ -41,12 +41,7 @@ class Intervenants extends User
      * @ORM\JoinTable(name="intervenants_specialites")
      */
     private $specialites;
-    
-        /**
-     * One Product has Many Features.
-     * @ORM\OneToMany(targetEntity="Jetons", mappedBy="intervenant")
-     */
-    private $jetons;
+
     
     
     
@@ -54,7 +49,7 @@ class Intervenants extends User
 
     public function __construct() {
         $this->specialites = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->jetons = new ArrayCollection();
+       
     }
     
     
@@ -95,39 +90,5 @@ class Intervenants extends User
     public function getSpecialites()
     {
         return $this->specialites;
-    }
-
-    /**
-     * Add jeton
-     *
-     * @param \AppBundle\Entity\Jetons $jeton
-     *
-     * @return Intervenants
-     */
-    public function addJeton(\AppBundle\Entity\Jetons $jeton)
-    {
-        $this->jetons[] = $jeton;
-
-        return $this;
-    }
-
-    /**
-     * Remove jeton
-     *
-     * @param \AppBundle\Entity\Jetons $jeton
-     */
-    public function removeJeton(\AppBundle\Entity\Jetons $jeton)
-    {
-        $this->jetons->removeElement($jeton);
-    }
-
-    /**
-     * Get jetons
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getJetons()
-    {
-        return $this->jetons;
     }
 }

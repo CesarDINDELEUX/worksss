@@ -13,9 +13,11 @@ class EtudiantsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+     // $parent =  parent::buildForm($builder, $options);
+      
         $builder->add('equipes');
-    }/**
-     * {@inheritdoc}
+    }
+     /* {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
