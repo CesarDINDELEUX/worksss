@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Intervenants list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for intervenant in intervenants %}
+            <tr>
+                <td><a href="{{ path('intervenants_show', { 'id': intervenant.id }) }}">{{ intervenant.id }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('intervenants_show', { 'id': intervenant.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('intervenants_edit', { 'id': intervenant.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('intervenants_new') }}">Create a new intervenant</a>
+        </li>
+    </ul>
+{% endblock %}

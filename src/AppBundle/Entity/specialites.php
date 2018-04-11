@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * specialites
@@ -27,6 +28,17 @@ class specialites
      * @ORM\Column(name="Description", type="string", length=255)
      */
     private $description;
+    
+    
+    /**
+     * Many Groups have Many Users.
+     * @ORM\ManyToMany(targetEntity="Intervenants", mappedBy="specialites")
+     */
+    private $intervenants;
+
+    public function __construct() {
+        $this->intervenants = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 
     /**
