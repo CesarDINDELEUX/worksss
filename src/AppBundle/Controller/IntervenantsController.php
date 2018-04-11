@@ -39,7 +39,7 @@ class IntervenantsController extends Controller
      */
     public function newAction(Request $request)
     {
-        $intervenant = new Intervenant();
+        $intervenant = new Intervenants();
         $form = $this->createForm('AppBundle\Form\IntervenantsType', $intervenant);
         $form->handleRequest($request);
 

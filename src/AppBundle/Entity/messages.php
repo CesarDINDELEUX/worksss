@@ -48,15 +48,6 @@ class messages
     
     
     
-    /**
-     * Many Features have One Product.
-     * @ORM\ManyToOne(targetEntity="Product", inversedBy="features")
-     * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
-     */
-    private $product;
-    
-    
-    
 
 
     /**
@@ -149,29 +140,5 @@ class messages
     public function getUsers()
     {
         return $this->users;
-    }
-
-    /**
-     * Set product
-     *
-     * @param \AppBundle\Entity\Product $product
-     *
-     * @return messages
-     */
-    public function setProduct(\AppBundle\Entity\Product $product = null)
-    {
-        $this->product = $product;
-
-        return $this;
-    }
-
-    /**
-     * Get product
-     *
-     * @return \AppBundle\Entity\Product
-     */
-    public function getProduct()
-    {
-        return $this->product;
     }
 }

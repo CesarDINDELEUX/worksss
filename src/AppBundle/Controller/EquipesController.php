@@ -39,7 +39,7 @@ class EquipesController extends Controller
      */
     public function newAction(Request $request)
     {
-        $equipe = new Equipe();
+        $equipe = new Equipes();
         $form = $this->createForm('AppBundle\Form\EquipesType', $equipe);
         $form->handleRequest($request);
 

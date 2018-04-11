@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\specialites;
+use AppBundle\Entity\projets;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -39,7 +40,7 @@ class specialitesController extends Controller
      */
     public function newAction(Request $request)
     {
-        $specialite = new Specialite();
+        $specialite = new specialites();
         $form = $this->createForm('AppBundle\Form\specialitesType', $specialite);
         $form->handleRequest($request);
 

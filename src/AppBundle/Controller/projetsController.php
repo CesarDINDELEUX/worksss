@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\projets;
+use AppBundle\Entity\specialites;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -39,7 +40,7 @@ class projetsController extends Controller
      */
     public function newAction(Request $request)
     {
-        $projet = new Projet();
+        $projet = new projets();
         $form = $this->createForm('AppBundle\Form\projetsType', $projet);
         $form->handleRequest($request);
 

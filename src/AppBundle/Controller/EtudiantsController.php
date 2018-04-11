@@ -39,7 +39,7 @@ class EtudiantsController extends Controller
      */
     public function newAction(Request $request)
     {
-        $etudiant = new Etudiant();
+        $etudiant = new Etudiants();
         $form = $this->createForm('AppBundle\Form\EtudiantsType', $etudiant);
         $form->handleRequest($request);
 

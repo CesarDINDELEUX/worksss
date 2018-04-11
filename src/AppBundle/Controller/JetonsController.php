@@ -39,7 +39,7 @@ class JetonsController extends Controller
      */
     public function newAction(Request $request)
     {
-        $jeton = new Jeton();
+        $jeton = new Jetons();
         $form = $this->createForm('AppBundle\Form\JetonsType', $jeton);
         $form->handleRequest($request);
 
