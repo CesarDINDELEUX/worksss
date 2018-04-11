@@ -44,10 +44,10 @@ doctrine:
     dbal:
         driver: pdo_mysql
         host: '127.0.0.1'
-        port: '3306'
+        port: '8889'
         dbname: 'workshop'
         user: 'root'
-        password: ''
+        password: 'root'
         charset: UTF8
         unix_socket: /tmp/mysql.sock
         server_version: '5.5'
